@@ -18,7 +18,11 @@ import { HomeComponent } from './home/home.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
-
+import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatStepperModule} from '@angular/material/stepper';
+import { MultiStepComponent } from './multi-step/multi-step.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -35,10 +39,14 @@ import {MatSortModule} from '@angular/material/sort';
     MatPaginatorModule,
     MatSortModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatStepperModule,
+    MatToolbarModule
 
   ],
-  declarations: [AppComponent, LoginComponent, SignupComponent, HomeComponent],
+  declarations: [AppComponent, LoginComponent, SignupComponent, HomeComponent, MultiStepComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
