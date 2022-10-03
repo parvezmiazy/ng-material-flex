@@ -8,21 +8,23 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatSelectModule} from '@angular/material/select';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatSortModule} from '@angular/material/sort';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatStepperModule} from '@angular/material/stepper';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MultiStepComponent } from './multi-step/multi-step.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { CoreModule } from './core/core.module';
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -43,10 +45,16 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatIconModule,
     MatSnackBarModule,
     MatStepperModule,
-    MatToolbarModule
-
+    MatToolbarModule,
+    CoreModule,
   ],
-  declarations: [AppComponent, LoginComponent, SignupComponent, HomeComponent, MultiStepComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    SignupComponent,
+    HomeComponent,
+    MultiStepComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
