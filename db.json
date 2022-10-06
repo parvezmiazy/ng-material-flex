@@ -1,0 +1,22 @@
+{
+  "productList": [
+    {
+      "name": "tt",
+      "category": "A",
+      "price": 20,
+      "date": "2022-10-26T18:00:00.000Z",
+      "freshness": "A",
+      "comment": "test",
+      "id": 1
+    },
+    {
+      "name": "fsdfsd",
+      "category": "A",
+      "price": 50,
+      "date": "2022-10-25T18:00:00.000Z",
+      "freshness": "A",
+      "comment": "test",
+      "id": 2
+    }
+  ]
+}
