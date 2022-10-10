@@ -53,9 +53,9 @@ export class AddProductComponent implements OnInit {
       if (this.productForm.valid) {
         this.apiService.saveProduct(this.productForm.value).subscribe(
           (res) => {
-            console.log(res);
-            alert('Product Added Successfull');
-            //this.router.navigateByUrl('');
+            //console.log(res);
+            // alert('Product Added Successfull');
+            this.dialogRef.close('save');
           },
           (err) => {
             console.log(err);
@@ -74,10 +74,9 @@ export class AddProductComponent implements OnInit {
       .updateProduct(this.productForm.value, this.editData.id)
       .subscribe(
         (res) => {
-          console.log(res);
-          alert('Product Updated Successfull');
+          //console.log(res);
+          //alert('Product Updated Successfull');
           this.productForm.reset(), this.dialogRef.close('update');
-          //this.router.navigateByUrl('');
         },
         (err) => {
           console.log(err);

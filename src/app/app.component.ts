@@ -34,9 +34,16 @@ export class AppComponent implements OnInit {
     this.getProduct();
   }
   open(): void {
-    this.dialog.open(AddProductComponent, {
-      width: '30%',
-    });
+    this.dialog
+      .open(AddProductComponent, {
+        width: '30%',
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val === 'save') {
+          this.getProduct();
+        }
+      });
   }
 
   getProduct() {
@@ -55,12 +62,30 @@ export class AppComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
 
-  editProduct(row: any): void {
-    this.dialog.open(AddProductComponent, {
-      width: '30%',
-      data: row,
-    });
+  editProduct(id: number): void {
+    this.dialog
+      .open(AddProductComponent, {
+        width: '30%',
+        data: id,
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val === 'update') {
+          this.getProduct();
+        }
+      });
   }
 
-  deleteProduct() {}
+  deleteProduct(id: number) {
+    this.apiService.deleteProduct(id).subscribe(
+      (res) => {
+        // console.log(res);
+        //alert('Product deleted Successfull');
+        this.getProduct();
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 }
